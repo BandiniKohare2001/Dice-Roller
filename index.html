@@ -1,13 +1,95 @@
 <html>
 <head>
     <title>Dice Roller</title>
-
+    <style>
+        body{
+            background: linear-gradient(135deg, rgb(243, 8, 8), blue);
+        }
+        #button{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            font-size: 20px;
+            padding: 10px;
+            width: 150px;
+            border-radius: 20px;
+            background-color: rgb(203, 160, 242);
+        }
+    </style>
 </head>  
 <body>
-  <p id="placeholder">
-  
-  </p>
-  <button id="button">Roll Dice</button>
+    <div style="background-color: white; height: 250px;border-radius: 40px; display: block;margin-left: auto; margin-right: auto; margin-top: 100px; width: 150px;padding: 70px; box-shadow: 0 0 10px 1px gray;">
+ <img src="./img/dice (6).png" height="150px" id="dice">
+ <br /><br /> <br />
+  <button id="button" type="button" onclick="rollDice()"> Roll Dice</button>
+</div>
+
+<script>
+const diceImg = document.getElementById("dice");
+function rollDice(){
+    const min = 1;
+    const max = 7;
+    const randomNumber = Math.floor(Math.random() * max-min) + min + 1;
+if(randomNumber==1)
+{
+    diceImg.src="./img/1.png"
+}
+else if(randomNumber==2){
+    diceImg.src="./img/2.png"
+}
+
+else if(randomNumber==3){
+    diceImg.src="./img/3.png"
+}
+
+else if(randomNumber==4){
+    diceImg.src="./img/4.png"
+}
+
+else if(randomNumber==5){
+    diceImg.src="./img/5.png"
+}
+
+else{
+    diceImg.src="./img/6.png"
+}
+}
+
+</script>
+   <!-- 
+  <script>
+  const dice = {
+  sides: 6,
+  roll: function () {
+    const randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
+
+function printNumber(number) {
+  const placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+const button = document.getElementById('button');
+
+button.onclick = function() {
+  const result = dice.roll();
+  printNumber(result);
+}; -->
+<!-- 
  
+<script>
+
+let rollResult = Math.floor(Math.random() * 6) + 1;
+        if (rollResult == 1) document.write('<img src="./img/dice (6).png">');
+else if (rollResult == 2) document.write('<img src="./img/dice.png">');
+else if (rollResult == 3) document.write('<img src="./img/dice (1).png">');
+else if (rollResult == 4) document.write('<img src="./img/dice (2).png">');
+else if (rollResult == 5) document.write('<img src="./img/dice (3).png">');
+else if (rollResult == 6) document.write('<img src="./img/dice (4).png">');
+else if (rollResult == 0) document.write('<img src="./img/dice (5).png">');
+else  document.write('<img src="6.jpg">');
+
+</script> -->
 </body>
 </html>
