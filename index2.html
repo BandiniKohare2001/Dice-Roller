@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dice Roller</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: white; height: 250px;border-radius: 40px; display: block;margin-left: auto; margin-right: auto; margin-top: 100px; width: 150px;padding: 70px; box-shadow: 0 0 10px 1px gray;
+
+
+        } */
+
+        .dice {
+            position: absolute;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .size {
+            position: absolute;
+            width: 0;
+        }
+
+        .playturn {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+
+        }
+
+        .rotatedice {
+            animation-name: rotethedice;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes rotethedice {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            0% {
+                transform: rotate(180deg);
+            }
+
+            0% {
+                transform: rotate(360deg);
+            }
+        }
+        .ludo-img{
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        
+        }
+        .red-dice-div{
+            display: block;
+          margin-left: auto;
+          margin-right: 669.9px;
+            border: 1.8px solid black;
+            height: 110px;
+            width: 116.5px;
+            position: relative;
+            margin-top: 70px;
+        }
+        .dice {
+            position: absolute;
+            height: 70px;
+            display: block;
+            margin-left: 18px;
+            margin-top: 18px;
+padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red-dice-div">
+        <img src="./img/dice (6).png" alt="" class="dice" id="dice1" onclick="turnofplayer(1)" />
+    </div>
+    <img src="./img/ludo.jpg" alt="" height="300px" class="ludo-img"/>
+
+
+    <script>
+
+        function turnofplayer(index) {
+            const dice = document.getElementById(`dice${index}`)
+            var audio = new Audio('./dice-142528.mp3');
+            audio.play();
+
+
+            const rollthedice = Math.floor(Math.random() * (7 - 1) + 1)
+            setTimeout(function addfirst() {
+                dice.classList.add("rotatedice")
+            }, 300)
+
+            setTimeout(function addanimation() {
+                dice.classList.remove("rotatedice")
+
+            }, 700)
+
+            setTimeout(function showingthenum() {
+                switch (rollthedice) {
+                    case 1:
+                        dice.src = "./img/1.png"
+                        break;
+                    case 2:
+                        dice.src = "./img/2.png"
+                        break;
+                    case 3:
+                        dice.src = "./img/3.png"
+                        break;
+                    case 4:
+                        dice.src = "./img/4.png"
+                        setTimeout(function addfour() {
+                            four.className = "six"
+                        }, 100)
+                        four.className = "size"
+                        break;
+                    case 5:
+                        dice.src = "./img/5.png"
+                        break;
+                    case 6:
+                        dice.src = "./img/6.png"
+
+                        setTimeout(function addsix() {
+                            six.className = "six"
+                        }, 100)
+
+                        six.className = "size"
+
+                }
+
+            }, 500)
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
